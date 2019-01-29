@@ -5,6 +5,8 @@ To use this script, copy this script to the masm directory, containing MASM.EXE,
 Open DOSBOX, cd to directory and run exec help
 
 Examples:
+```
   exec help     ; opens help for exec
   exec foo notd ; runs autoexec routine for foo.asm and returns foo.obj and foo.exe
   exec foo      ; runs autoexec routine as before and opens turbodebugger for resulting executable
+```
