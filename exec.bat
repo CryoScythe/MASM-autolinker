@@ -6,21 +6,27 @@ if NOT "%1"=="help" goto execute
 echo Instruction: Copy this batch file in the folder having MASM.EXE, LINK.EXE and TD.EXE.
 echo Instead of using all commands individually, use this script.
 echo.
-echo Usage: exec <asm-filename> [notd]
+echo Usage: exec <asm-filename> [notd] [-oe (only execute)]
 echo.
 echo.
 echo Assume file is saved as foo.asm
 echo.
 echo Example: exec foo notd	; doesn't run td
 echo Example: exec foo	; run td after building and linking
+echo Example: exec foo -oe ; runs the program without td
 goto exit
 
 :execute
 masm %1.asm;
 link %1.obj;
 
-if NOT "%2"=="notd" goto exit
+if "%2"=="notd" goto exit
+if "%2"=="-oe" goto executewithouttd
 
 td %1.exe
+
+:executewithouttd
+%1.exe
+
 :exit
 @echo on
