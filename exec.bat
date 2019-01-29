@@ -19,7 +19,7 @@ goto exit
 masm %1.asm;
 link %1.obj;
 
-if NOT "%2"=="notd" goto exit
+if "%2"=="notd" goto exit
 
 td %1.exe
 :exit
