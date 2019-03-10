@@ -9,4 +9,5 @@ Examples:
   exec help     ; opens help for exec
   exec foo notd ; runs autoexec routine for foo.asm and returns foo.obj and foo.exe
   exec foo      ; runs autoexec routine as before and opens turbodebugger for resulting executable
+  exec foo oe   ; runs autoexec routine as before and executes the exe file created
 ```
